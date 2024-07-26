@@ -1,0 +1,6 @@
+FROM runit-base:latest
+
+RUN DEBIAN_FRONTEND=noninteractive; apt -y install apache2
+RUN mkdir -p /var/run/apache2
+COPY apache2 /services/apache2/
+COPY crontabs/* /etc/cron.d/
